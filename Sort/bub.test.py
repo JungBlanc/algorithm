@@ -1,5 +1,7 @@
 list = [10, 5, 6, 8, 2, 1]
 
+# 뒤에서부터 정렬
+
 
 def sorter(list):
     n = len(list)
