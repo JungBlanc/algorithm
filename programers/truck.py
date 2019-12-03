@@ -1,4 +1,4 @@
-bridge_length = 2
+bridge_length = 3
 weight = 10
 truck_weights = [7, 4, 5, 6]
 
