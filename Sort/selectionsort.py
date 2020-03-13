@@ -11,11 +11,11 @@ def sel_sort(a):
         for j in range(i+1, n):
             if a[j] < a[min_idx]:
                 min_idx = j
-        temp = a[i]
-        a[i] = a[min_idx]
-        a[min_idx] = temp
+        # temp = a[i]
+        # a[i] = a[min_idx]
+        # a[min_idx] = temp
 
-        # a[i], a[min_idx] = a[min_idx], a[i] //둘다 가능
+        a[i], a[min_idx] = a[min_idx], a[i] // 둘다 가능
 
 
 sel_sort(list)
