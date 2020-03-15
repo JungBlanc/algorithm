@@ -1,40 +1,37 @@
-def merge_sort(arr):
+def merge_sorted(arr):
     if len(arr) > 1:
-        n = len(arr) // 2
-        left = arr[:n]
-        right = arr[n:]
+        mid = len(arr)//2
+        left = arr[:mid]
+        right = arr[mid:]
 
-        le = merge_sort(left)
-        re = merge_sort(right)
-
-        return merge(le, re)
+        l = merge_sorted(left)
+        r = merge_sorted(right)
+        return merge(l, r)
     else:
         return arr
 
 
-def merge(l, r):
-    # index
-    i = 0
-    j = 0
+def merge(left, right):
+    i, j = 0, 0
     arr = []
 
-    while (i < len(l)) & (j < len(r)):
-        if l[i] < r[j]:
-            arr.append(l[i])
+    while (i < len(left)) & (j < len(right)):
+        if left[i] < right[j]:
+            arr.append(left[i])
             i += 1
         else:
-            arr.append(r[j])
+            arr.append(right[j])
             j += 1
 
-    while i < len(l):
-        arr.append(l[i])
+    while (i < len(left)):
+        arr.append(left[i])
         i += 1
-    while j < len(r):
-        arr.append(r[j])
+    while (j < len(right)):
+        arr.append(right[j])
         j += 1
 
     return arr
 
 
-a = [3, 5, 1, 2, 9, 6, 4, 5, 7]
-print(merge_sort(a))
+arr = [3, 5, 1, 2, 9, 6, 4, 5, 7]
+print(merge_sorted(arr))
