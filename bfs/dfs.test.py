@@ -16,15 +16,29 @@ graph = {
 }
 
 
-def dfs(graph, node):
-    visit = []
+# def dfs(graph, node):
+#     visit = []
+#     stack = []
+
+#     stack.append(node)
+#     while stack:
+#         node = stack.pop()
+#         if node not in visit:
+#             visit.append(node)
+#             stack.extend(graph[node])
+
+#     return visit
+
+
+def dfs(graph, start_node):
+    visited = []
     stack = []
 
-    stack.append(node)
-    while stack:
+    stack.append(start_node)
+    while start_node:
         node = stack.pop()
-        if node not in visit:
-            visit.append(node)
+        if node not in visited:
+            visited.append(node)
             stack.extend(graph[node])
-
-    return visit
+    return visited
+    
