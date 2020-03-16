@@ -28,10 +28,13 @@ def selection_sort(arr):
     for i in range(0, n-1):
         min = i
         for j in range(i+1, n):
-            if(arr[min] > arr[j]):
-                min = j
+            if a[j] < a[min_idx]:
+                min_idx = j
+        # temp = a[i]
+        # a[i] = a[min_idx]
+        # a[min_idx] = temp
 
-        arr[i], arr[min] = arr[min], arr[i]
+        a[i], a[min_idx] = a[min_idx], a[i] // 둘다 가능
 
 
 selection_sort(list)
