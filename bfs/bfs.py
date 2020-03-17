@@ -35,17 +35,19 @@ graph = {
 
 
 def bfs(graph, start_node):
-    visited = list()
+
+    visit = {}
     queue = list()
 
     queue.append(start_node)
+
     while queue:
         node = queue.pop(0)
-        if node not in visited:
-            visited.extend(node)
+        if node not in visit:
+            visit[node] = True
             queue.extend(graph[node])
 
-    return visited
+    return visit
 
 
 print(bfs(graph, 'A'))
