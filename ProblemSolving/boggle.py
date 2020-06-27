@@ -2,17 +2,17 @@
 dx = {-1, -1, -1, 1, 1, 1, 0, 0}
 dy = {-1, 0, 1, -1, 0, 1, -1, 1}
 
-board = [["U", "R", "L", "P", "M"]
-         ["X", "P", "R", "E", "T"]
-         ["G", "I", "A", "E", "T"]
-         ["X", "T", "N", "Z", "Y"]
+board = [["U", "R", "L", "P", "M"],
+         ["X", "P", "R", "E", "T"],
+         ["G", "I", "A", "E", "T"],
+         ["X", "T", "N", "Z", "Y"],
          ["X", "O", "Q", "R", "S"]]
 
 test = ["PRETTY",
         "GIRL",
         "REPEAT",
         "KARA",
-        "PANDORA"
+        "PANDORA",
         "GIAZAPX"]
 
 
@@ -31,4 +31,7 @@ def hashWord(y, x, word):
     for i in range(8):
         nextY = y + dy[i]
         nextX = x + dx[i]
-        if hashWord(nextY, nextX, word[0:1])
+        if hashWord(nextY, nextX, word):
+            return True
+        else:
+            return False
